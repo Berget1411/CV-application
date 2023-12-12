@@ -6,6 +6,8 @@ const exampleData = {
     email: "karl.jacobsson@gmail.com",
     phoneNumber: "+46 3235 5121 5721",
     address: "Stockholm, Sweden",
+    about:
+      "ddsasdsad d asdasdsadasd asdsadsadasdasd asdasdsadsadasd asdasdasdas dasdasdasdasd asdasdasdadsada asdasda dsada asd asdasdsad asd asdasdasda sad",
   },
   sections: {
     educations: [

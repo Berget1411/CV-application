@@ -1,0 +1,96 @@
+@use "./index";
+
+.resume-display {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 30px 20px;
+  padding-bottom: 20px;
+
+  font-family: var(--resume-font-family);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+.personal-info {
+  .header {
+    background-color: var(--resume-accent);
+    color: white;
+    padding: 25px 0px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: 10px;
+  }
+
+  .contact {
+    @include index.flex-center();
+    gap: 15px;
+    flex-wrap: wrap;
+
+    img {
+      width: 20px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 1.1em;
+    }
+  }
+
+  .about {
+    padding: 20px 50px;
+    font-size: 1.2em;
+  }
+}
+
+.educations,
+.experiences {
+  h2 {
+    font-size: 1.3em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #0e7490;
+    padding: 5px;
+    margin: 0px 50px 20px 50px;
+  }
+
+  ul {
+    padding: 0px 50px;
+    display: grid;
+    gap: 10px;
+  }
+
+  li {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+  }
+
+  .location,
+  .date {
+    font-size: 1.05em;
+    min-width: 150px;
+  }
+
+  .school-name,
+  .company-name {
+    font-size: 1.05em;
+    font-weight: bold;
+  }
+
+  .work-description {
+    font-size: 1.05em;
+  }
+}
