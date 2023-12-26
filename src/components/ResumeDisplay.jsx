@@ -2,6 +2,8 @@ import "../styles/resumeDisplay.scss";
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
 import addressIcon from "../assets/address.svg";
+import downloadIcon from "../assets/download.svg";
+import { usePDF } from "react-to-pdf";
 
 function Personal({ personalInfo }) {
   return (
@@ -76,11 +78,20 @@ function Experiences({ sections }) {
 }
 
 function ResumeDisplay({ personalInfo, sections }) {
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
   return (
     <div className="resume-display">
-      <Personal personalInfo={personalInfo} />
-      <Educations sections={sections} />
-      <Experiences sections={sections} />
+      <div ref={targetRef}>
+        <Personal personalInfo={personalInfo} />
+        <Educations sections={sections} />
+        <Experiences sections={sections} />
+      </div>
+      <div className="download-container">
+        <button className="download" onClick={() => toPDF()}>
+          <img src={downloadIcon} alt="" />
+          Download
+        </button>
+      </div>
     </div>
   );
 }

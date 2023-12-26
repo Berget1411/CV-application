@@ -1,0 +1,90 @@
+@use "./index.scss";
+
+.edit {
+  display: grid;
+  grid-template-areas:
+    "sidebar head"
+    "sidebar body"
+    ". body";
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 50px 100px 1fr;
+
+  gap: 20px;
+  margin: 30px 20px;
+}
+
+.edit-mode {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 10px;
+  border-radius: 15px;
+  background-color: white;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.1em;
+    @include index.button-styling();
+    transition: background-color 0.2s;
+  }
+  img {
+    width: 20px;
+  }
+}
+
+.template-loader {
+  grid-area: head;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 15px;
+
+  button {
+    width: 100%;
+    border-radius: 10px;
+    @include index.button-styling();
+  }
+
+  .clear-resume {
+    color: #dc2626;
+    @include index.flex-center;
+    gap: 6px;
+
+    img {
+      width: 15px;
+    }
+  }
+
+  .load-example {
+    background-color: var(--secondary-color);
+  }
+}
+
+.content,
+.customize {
+  grid-area: body;
+}
+
+.active-button {
+  background-color: var(--secondary-color) !important;
+}
+
+@media (max-width: 950px) {
+  .edit {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 50px 1fr;
+    grid-template-areas:
+      " sidebar"
+      " head"
+      " body";
+  }
+}

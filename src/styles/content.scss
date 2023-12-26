@@ -1,0 +1,170 @@
+@use "./index.scss";
+
+.content-container {
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-icon {
+    width: 25px;
+  }
+  h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+
+  #arrow-icon {
+    width: 30px;
+    transition: transform 0.2s;
+  }
+
+  .arrow-up {
+    transform: rotate(180deg);
+  }
+}
+
+form {
+  margin-top: 20px;
+  display: grid;
+  label {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    border: none;
+    background-color: var(--secondary-color);
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: var(--third-color);
+    }
+  }
+  textarea {
+    border: none;
+    overflow: auto;
+    border: 2px solid var(--secondary-color);
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+  }
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+#educations-container {
+  padding: 0;
+
+  .content-header {
+    padding: 20px;
+  }
+
+  form {
+    padding: 0 20px 20px 20px;
+    margin-top: 0;
+  }
+}
+
+.educations {
+  h3 {
+    border-top: 5px solid var(--background-color);
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.add-content {
+  border-top: 5px solid var(--background-color);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    @include index.button-styling();
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 4px solid var(--background-color);
+
+    &::before {
+      content: "\002B";
+      margin-right: 5px;
+    }
+  }
+}
+
+.dates {
+  display: flex;
+  gap: 10px;
+
+  input {
+    margin-top: 5px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  button {
+    @include index.flex-center();
+    @include index.button-styling();
+    padding: 8px 16px;
+    border: 2px solid #9ca3af;
+    border-radius: 8px;
+    color: #9ca3af;
+  }
+
+  .delete-button {
+    gap: 4px;
+
+    img {
+      width: 16px;
+      filter: brightness(0) saturate(100%) invert(69%) sepia(5%) saturate(621%)
+        hue-rotate(179deg) brightness(95%) contrast(84%);
+    }
+  }
+
+  .right-buttons {
+    @include index.flex-center();
+    gap: 10px;
+  }
+
+  .save-button {
+    background-color: #3b82f6;
+    border: 2px solid #3b82f6;
+    color: white;
+  }
+}
